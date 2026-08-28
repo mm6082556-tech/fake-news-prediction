@@ -17,8 +17,8 @@ if not fake_path.exists() or not true_path.exists():
         "Put fake.csv and true.csv inside the data folder before running this script."
     )
 
-fake = pd.read_csv(fake_path,encoding="latin1", on_bad_lines="skip")
-true = pd.read_csv(true_path, on_bad_lines="skip")
+fake = pd.read_csv(fake_path,encoding="latin1", on_bad_lines="skip",engine="python")
+true = pd.read_csv(true_path,encoding="latin1",on_bad_lines="skip",engine="python")
 
 fake["label"] = 0
 true["label"] = 1
