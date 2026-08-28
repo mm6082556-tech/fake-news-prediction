@@ -24,6 +24,7 @@ fake["label"] = 0
 true["label"] = 1
 
 data = pd.concat([fake, true], ignore_index=True)
+st.write(data.columns.tolist())
 
 data["text"]=data["text"].fillna("")
 
