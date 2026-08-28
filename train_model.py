@@ -26,10 +26,12 @@ true["label"] = 1
 
 data = pd.concat([fake, true], ignore_index=True)
 
+data["text"] = data["title"].fillna("") + " " + data["text"].fillna("")
 
-st.write("Fake columns:", fake.columns.tolist())
-st.write("True columns:", true.columns.tolist())
-st.stop()
+data = data[["text", "label"]].dropna()
+
+X = data["text"]
+Y = data["label"]
 
 
 
