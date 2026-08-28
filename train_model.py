@@ -24,8 +24,7 @@ fake["label"] = 0
 true["label"] = 1
 
 data = pd.concat([fake, true], ignore_index=True)
-data["text"]=data["title"].fillna("")+""+
-data["text"].fillna("")
+data["text"]=data["title"].fillna("")+""+data["text"].fillna("")
 data=data[["text","label"]].dropna()
 
 X = data["text"]
