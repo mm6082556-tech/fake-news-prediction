@@ -29,11 +29,9 @@ data = pd.concat([fake, true], ignore_index=True)
 
 st.write("Fake columns:", fake.columns.tolist())
 st.write("True columns:", true.columns.tolist())
-st.write("All columns:", data.columns.tolist())
+st.stop()
 
 
-X = data["text"]
-y = data["label"]
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
